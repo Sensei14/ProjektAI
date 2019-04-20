@@ -9,17 +9,36 @@ import { BrowserRouter as Router } from "react-router-dom";
 
 class App extends Component {
   state = {
-    isLogged: false
+    isLogged: false,
+    isLoaded: false
   };
 
   handleLogin = () => {
     this.setState({
       isLogged: !this.state.isLogged
     });
-  };
+  }; 
+  
+ handleLoadingPage = () => {
+   this.setState({
+     isLoaded:true
+   })
+ 
+ }
+
+ componentDidMount() {
+     setTimeout(this.handleLoadingPage,3000)
+  }
+
+
 
   render() {
+
+    
     return (
+      <>
+      {this.state.isLoaded ?
+      (
       <div className="container-fluid">
         <div className="app">
           <Router>
@@ -33,7 +52,14 @@ class App extends Component {
           </Router>
         </div>
       </div>
-    );
+      ) : (
+          <div id="loadingpage">
+          <div  class="spinner-border" role="status"/>
+            <div>Wczytywanie zasobów strony</div>
+          </div>
+      )}
+      </>
+    )
   }
 }
 
