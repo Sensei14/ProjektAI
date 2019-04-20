@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "../styles/register.css";
-import { timingSafeEqual } from "crypto";
 
 class RegisterPage extends Component {
   state = {

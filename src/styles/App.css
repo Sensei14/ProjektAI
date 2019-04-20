@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
-
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono");
 
 body {
   margin: 0;
@@ -37,7 +36,6 @@ body {
 #loadingpage {
   text-align: center;
   font-size: 40px;
-  padding:250px;
-  font-family: 'Roboto Mono', monospace;
+  padding: 250px;
+  font-family: "Roboto Mono", monospace;
 }
-
