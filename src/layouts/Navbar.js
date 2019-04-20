@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/navbar.css";
 
-const Navbar = () => {
+const Navbar = props => {
   return (
     <div className="mynavbar">
       <nav className="navbar navbar-expand-sm bg-dark navbar-dark justify-content-between">
@@ -23,10 +23,37 @@ const Navbar = () => {
             </Link>
           </li>
         </ul>
-        <span>
+
+        {props.isLogged ? (
+          <span>
+            {" "}
+            USERNAME
+            <button
+              className="btn btn-outline-light btn-sm"
+              onClick={props.handleLogin}
+            >
+              Wyloguj
+            </button>
+          </span>
+        ) : (
+          <span>
+            <button
+              className="btn btn-outline-light btn-sm"
+              onClick={props.handleLogin}
+            >
+              Logowanie
+            </button>
+            <button className="btn btn-outline-light btn-sm">
+              Rejestracja
+            </button>
+          </span>
+        )}
+
+        {/* <span>
           Jesteś zalogowany!
           <button className="btn btn-outline-light btn-sm"> Logowanie </button>
-        </span>
+          <button className="btn btn-outline-light btn-sm">Rejestracja</button>
+        </span> */}
       </nav>
     </div>
   );

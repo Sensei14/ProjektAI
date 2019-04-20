@@ -8,13 +8,26 @@ import Footer from "./layouts/Footer";
 import { BrowserRouter as Router } from "react-router-dom";
 
 class App extends Component {
+  state = {
+    isLogged: false
+  };
+
+  handleLogin = () => {
+    this.setState({
+      isLogged: !this.state.isLogged
+    });
+  };
+
   render() {
     return (
       <div className="container-fluid">
         <div className="app">
           <Router>
             <Header />
-            <Navbar />
+            <Navbar
+              isLogged={this.state.isLogged}
+              handleLogin={this.handleLogin}
+            />
             <Content />
             <Footer />
           </Router>
