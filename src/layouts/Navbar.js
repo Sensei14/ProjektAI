@@ -26,14 +26,15 @@ const Navbar = props => {
 
         {props.isLogged ? (
           <span>
-            {" "}
             USERNAME
-            <button
-              className="btn btn-outline-light btn-sm"
-              onClick={props.handleLogin}
-            >
-              Wyloguj
-            </button>
+            <Link to="/">
+              <button
+                className="btn btn-outline-light btn-sm"
+                onClick={props.handleLogin}
+              >
+                Wyloguj
+              </button>
+            </Link>
           </span>
         ) : (
           <span>
@@ -43,9 +44,11 @@ const Navbar = props => {
             >
               Logowanie
             </button>
-            <button className="btn btn-outline-light btn-sm">
-              Rejestracja
-            </button>
+            <Link to="/register">
+              <button className="btn btn-outline-light btn-sm">
+                Rejestracja
+              </button>
+            </Link>
           </span>
         )}
 
