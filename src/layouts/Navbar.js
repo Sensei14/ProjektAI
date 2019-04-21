@@ -23,7 +23,7 @@ const Navbar = props => {
             </Link>
           </li>
         </ul>
-
+      
         {props.isLogged ? (
           <span>
             USERNAME

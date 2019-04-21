@@ -1,0 +1,11 @@
+.products img{
+    text-align: center;
+    padding: 20px;
+}
+
+
+.products button {
+    position:abosulute;
+    top: 0px;
+    left: 1200px;
+}
