@@ -1,18 +1,28 @@
 import React, { Component } from "react";
 import "../styles/products.css";
 import { Button, Modal, ModalHeader, ModalFooter, ModalBody } from 'reactstrap';
-
+import Product from "./Product";
 
 
 class ProductList extends Component {
+
 
     state = {
         value: 0,
         availble: 7,
         isModalOpen: false,
-        isModalInfoOpen: false
-    };
+        isModalInfoOpen: false,
+        isSomethinginShopCard:false,
+        products: [
+            { id: 1, name: "białko", opis: "Bialkowewekwoapdksapodkopsa" },
+            { id: 2, name: "kreatyna", opis: "Kreayttyekwoapdksapodkopsa" },
+            { id: 3, name: "sterydy", opis: "sterydysdsdsewekwoapdksapodkopsa" },
+            { id: 4, name: "bcca", opis: "bcccaaaaaowewekwoapdksapodkopsa" },
+            { id: 5, name: "wpa", opis: "wPAAAAAAAAAAAAAAAAAAAAAA" },
+            { id: 6, name: "shot", opis: "Energetyk shoydksapodkopsa" },
+        ]
 
+    }
 
 
     handleChangeValue = type => {
@@ -25,20 +35,26 @@ class ProductList extends Component {
                 value: this.state.value - 1
             });
         }
+
+
     };
 
     handleBuy = () => {
         this.setState({
             availble: this.state.availble - this.state.value,
-            value: 0
+            value: 0,
+            isSomethinginShopCard:true
         });
     };
 
-    handleToggleModal = () => {
-        this.setState({
-            isModalOpen: !this.state.isModalOpen
-        })
-    }
+  handleToggleModal = () => {
+    console.log("xd");
+    this.setState({
+        isModalOpen: !this.state.isModalOpen
+    })
+      
+}
+
 
     handleToggleInfo = () => {
         this.setState({
@@ -49,10 +65,39 @@ class ProductList extends Component {
 
 
 
+
+
     render() {
+
+        let products = [...this.state.products];
+        products = products.map(product => (
+            <Product
+                key={products.id}
+                name={product.name}
+                opis={product.opis}
+                handleToggleInfo ={this.handleToggleInfo}
+                isModalInfoOpen ={this.isModalInfoOpen}
+                handleToggleModal ={this.handleToggleModal}
+                isModalOpen={this.state.isModalOpen}
+                handleBuy ={this.handleBuy}
+                handleChangeValue={this.handleChangeValue}
+                value={this.state.value}
+                availble={this.state.availble}
+                isSomethinginShopCard={this.state.isSomethinginShopCard}
+               
+            />
+            
+
+        ));
+            
         return (
             <div className="products">
-                <img src="https://ecsmedia.pl/c/biotech-odzywka-bialkowa-iso-whey-zero-908-g-w-iext52941782.jpg" alt="" />
+
+
+                {products}
+        
+                
+                 {/* <img src="https://ecsmedia.pl/c/biotech-odzywka-bialkowa-iso-whey-zero-908-g-w-iext52941782.jpg" alt="" />
                 <Button onClick={this.handleToggleModal}>Dodaj do koszyka</Button>
 
                 <Modal isOpen={this.state.isModalOpen}>
@@ -77,7 +122,7 @@ class ProductList extends Component {
         </Button>
                         <span>
                             {this.state.value > 0 ? (
-                                <Button onClick={this.handleBuy}>Kup</Button>
+                                <Button onClick={this.handleBuy}>Dodaj do koszyka</Button>
                             ) : null}
                         </span>
 
@@ -100,7 +145,7 @@ class ProductList extends Component {
                     <ModalFooter>
                         <button onClick={this.handleToggleInfo}>Cancel</button>
                     </ModalFooter>
-                </Modal>
+                </Modal>    */}
 
             </div>
         );
