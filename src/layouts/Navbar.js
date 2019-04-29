@@ -23,21 +23,21 @@ const Navbar = props => {
             </Link>
           </li>
         </ul>
-        
+
         {props.isLogged ? (
           <span>
-            <a href="https://www.youtube.com/"> <img src="https://cmkt-image-prd.global.ssl.fastly.net/0.1.0/ps/4371836/300/200/m1/fpnw/wm0/creative-market-.jpg?1524898068&s=be995007e8a8a16743d2ec9f86beb312" width="50px" alt="" /></a>
-          <span>
-            USERNAME
-            <Link to="/">
-              <button
-                className="btn btn-outline-light btn-sm"
-                onClick={props.handleLogin}
-              >
-                Wyloguj
-              </button>
-            </Link>
-          </span>
+            <i class="fas fa-shopping-cart fa-lg" />
+            <span>
+              USERNAME
+              <Link to="/">
+                <button
+                  className="btn btn-outline-light btn-sm"
+                  onClick={props.handleLogin}
+                >
+                  Wyloguj
+                </button>
+              </Link>
+            </span>
           </span>
         ) : (
           <span>
