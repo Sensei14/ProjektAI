@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "22c695ec0cec63687cc6",
+    "revision": "dcbf71227f216b492b72",
     "url": "/ProjektAI/static/css/main.83f44ea9.chunk.css"
   },
   {
-    "revision": "22c695ec0cec63687cc6",
-    "url": "/ProjektAI/static/js/main.60c993c5.chunk.js"
+    "revision": "dcbf71227f216b492b72",
+    "url": "/ProjektAI/static/js/main.2033eb18.chunk.js"
   },
   {
     "revision": "cfbc8cb4a6b0c1d14181",
@@ -28,7 +28,7 @@ self.__precacheManifest = [
     "url": "/ProjektAI/static/media/home2.e09973b3.jpg"
   },
   {
-    "revision": "8bac1ff50327a4658cb95cce2a069f14",
+    "revision": "6050bdb36f0bd9786e129103dc88cf0f",
     "url": "/ProjektAI/index.html"
   }
 ];
