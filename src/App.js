@@ -24,7 +24,7 @@ class App extends Component {
     return (
       <div className="container-fluid">
         <div className="app">
-          <Router>
+          <Router basename={process.env.PUBLIC_URL}>
             <Header />
             <Navbar
               isLogged={this.state.isLogged}
