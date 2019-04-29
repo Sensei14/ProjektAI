@@ -4,15 +4,13 @@ import "../styles/header.css";
 const Header = () => {
   return (
     <div className="header">
-      <div className="jumbotron jumbotron-fluid">
-        <div className="container">  
-          <h1 id="logotext" className="display-4">
+          <div className="logomarg">
+          <h1 id="logotext" className="display-3">
             KASZTANIAKI
           </h1>
           <p className="lead">
             Najlepszy sklep z odżywkami według magazynu Kasztan 2019.
           </p>
-      </div>
       </div>
     </div>
   );

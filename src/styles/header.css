@@ -2,9 +2,16 @@
 
  font-family: 'Roboto Mono', monospace;
  font-weight: 900;
- color: darkslategray
+ color: white;
 }
 
 .lead {
-  color:darkslateblue
+  color:white;
 }
+
+.logomarg {
+
+margin-top: 40px;
+
+}
+
