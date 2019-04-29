@@ -22,9 +22,9 @@ class App extends Component {
 
   render() {
     return (
-      <div className="container-fluid">
-        <div className="app">
-          <Router basename={process.env.PUBLIC_URL}>
+      <Router basename={process.env.PUBLIC_URL}>
+        <div className="container-fluid">
+          <div className="app">
             <Header />
             <Navbar
               isLogged={this.state.isLogged}
@@ -32,9 +32,9 @@ class App extends Component {
             />
             <Content />
             <Footer />
-          </Router>
+          </div>
         </div>
-      </div>
+      </Router>
     );
   }
 }
