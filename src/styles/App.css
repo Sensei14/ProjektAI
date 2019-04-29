@@ -2,11 +2,11 @@
 
 body {
   margin: 0;
-  padding: 0 40px 0 40px;
+  padding: 0;
 }
 
 .app {
-  background-color: cadetblue;
+  background-color: steelblue;
   text-align: center;
   display: grid;
   grid-template-areas:
@@ -27,15 +27,10 @@ body {
 
 .content {
   grid-area: c;
+  min-height: 60vh;
 }
 
 .footer {
   grid-area: f;
-}
-
-#loadingpage {
-  text-align: center;
-  font-size: 40px;
-  padding: 250px;
-  font-family: "Roboto Mono", monospace;
+  margin-top: 25px;
 }

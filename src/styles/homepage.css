@@ -1,0 +1,27 @@
+.homepage {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.homepage img {
+  border-radius: 30px;
+  padding: 20px;
+}
+
+.homepage p {
+  padding: 20px 90px 10px 90px;
+}
+
+.homeicons span {
+  color: black;
+  display: inline-block;
+  padding: 20px;
+  margin: 0;
+  font-size: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.homeicons i {
+  margin-right: 5px;
+}
