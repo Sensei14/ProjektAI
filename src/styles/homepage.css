@@ -1,12 +1,13 @@
 .homepage {
   text-align: center;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
+  color: white;
 }
 
-.homepage img {
-  border-radius: 30px;
-  padding: 20px;
+.trainers img {
+  border-radius: 120px;
+  padding: 10px 20px 10px 20px;
 }
 
 .homepage p {
@@ -24,4 +25,16 @@
 }
 .homeicons i {
   margin-right: 5px;
+}
+
+.homepage article {
+  margin: 10px;
+  padding: 10px;
+  display: inline-block;
+  word-wrap: break-word;
+  max-width: 40%;
+}
+
+.homepage article img {
+  width: 400px;
 }

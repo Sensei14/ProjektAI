@@ -10,15 +10,9 @@ body {
   text-align: center;
   display: grid;
   grid-template-areas:
-    "h h h h h h h h h h h h"
     "n n n n n n n n n n n n"
     "c c c c c c c c c c c c"
     "f f f f f f f f f f f f";
-  grid-gap: 10px;
-}
-
-.header {
-  grid-area: h;
 }
 
 .mynavbar {
@@ -27,10 +21,10 @@ body {
 
 .content {
   grid-area: c;
-  min-height: 60vh;
+  min-height: 80vh;
 }
 
 .footer {
   grid-area: f;
-  margin-top: 25px;
+  margin-top: 20px;
 }

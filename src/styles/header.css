@@ -1,13 +1,3 @@
-#logotext {
-  font-family: "Roboto Mono", monospace;
-  font-weight: 900;
-  color: white;
-}
-
-.lead {
-  color: white;
-}
-
-.logomarg {
-  margin-top: 20px;
+.header {
+  background-color: steelblue;
 }

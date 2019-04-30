@@ -5,3 +5,7 @@ span {
   color: white;
   margin-left: 10px;
 }
+
+.mynavbar li {
+  padding: 0 6px 0 6px;
+}

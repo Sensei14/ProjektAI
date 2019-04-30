@@ -23,16 +23,13 @@ class App extends Component {
   render() {
     return (
       <Router basename={process.env.PUBLIC_URL}>
-        <div className="container-fluid">
-          <div className="app">
-            <Header />
-            <Navbar
-              isLogged={this.state.isLogged}
-              handleLogin={this.handleLogin}
-            />
-            <Content />
-            <Footer />
-          </div>
+        <div className="app">
+          <Navbar
+            isLogged={this.state.isLogged}
+            handleLogin={this.handleLogin}
+          />
+          <Content />
+          <Footer />
         </div>
       </Router>
     );

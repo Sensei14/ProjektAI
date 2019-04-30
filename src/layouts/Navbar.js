@@ -1,15 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/navbar.css";
-
 const Navbar = props => {
   return (
     <div className="mynavbar">
       <nav className="navbar navbar-expand-sm bg-dark navbar-dark justify-content-between">
         <ul className="navbar-nav">
+          <span className="navbar-brand">MusclePower</span>
           <li className="nav-item">
             <Link to="/" className="nav-link">
-              HOMEPAGE
+              STRONA GŁÓWNA
             </Link>
           </li>
           <li className="nav-item">
