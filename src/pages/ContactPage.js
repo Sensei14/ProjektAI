@@ -14,8 +14,9 @@ const ContactPage = () => {
       <div>
         <span>
           <i className="fas fa-at fa-3x" />
-          <br /> biuro@kasztany.pl
-          <br /> kasztan@kasztany.pl
+          <br /> Biuro@MusclePower.pl
+          <br /> Daniel@MusclePower.pl
+          <br /> Karol@MusclePower.pl
         </span>
         <hr />
       </div>
