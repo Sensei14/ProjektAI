@@ -6,6 +6,7 @@ body {
 }
 
 .app {
+  background-color: #eee;
   text-align: center;
   display: grid;
   grid-template-areas:
