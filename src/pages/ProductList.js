@@ -14,12 +14,12 @@ class ProductList extends Component {
         isModalInfoOpen: false,
         isSomethinginShopCard:false,
         products: [
-            { id: 1, name: "białko", opis: "Bialkowewekwoapdksapodkopsa" },
-            { id: 2, name: "kreatyna", opis: "Kreayttyekwoapdksapodkopsa" },
-            { id: 3, name: "sterydy", opis: "sterydysdsdsewekwoapdksapodkopsa" },
-            { id: 4, name: "bcca", opis: "bcccaaaaaowewekwoapdksapodkopsa" },
-            { id: 5, name: "wpa", opis: "wPAAAAAAAAAAAAAAAAAAAAAA" },
-            { id: 6, name: "shot", opis: "Energetyk shoydksapodkopsa" },
+            { id: 1, name: " WPC PROTEIN", opis: "ALLNUTRITION Whey Protein to białko w którego skład wchodzi czysty koncentrat białka serwatki bez dodatku innych mniej wartościowych składników. Nasze białko charakteryzuje się szybkim wchłanianiem, wysokim poziomem aminokwasów rozgałęzionych oraz wysoką wartością biologiczną (BV 104). Białko pomaga w utrzymaniu masy mięśniowej oraz przyczynia się do jej wzrostu."},
+            { id: 2, name: "Kreatyna", opis: "ALLNUTRITION Whey Protein to białko w którego skład wchodzi czysty koncentrat białka serwatki bez dodatku innych mniej wartościowych składników. Nasze białko charakteryzuje się szybkim wchłanianiem, wysokim poziomem aminokwasów rozgałęzionych oraz wysoką wartością biologiczną (BV 104). Białko pomaga w utrzymaniu masy mięśniowej oraz przyczynia się do jej wzrostu." },
+            { id: 3, name: "Sterydy", opis: "ALLNUTRITION Whey Protein to białko w którego skład wchodzi czysty koncentrat białka serwatki bez dodatku innych mniej wartościowych składników. Nasze białko charakteryzuje się szybkim wchłanianiem, wysokim poziomem aminokwasów rozgałęzionych oraz wysoką wartością biologiczną (BV 104). Białko pomaga w utrzymaniu masy mięśniowej oraz przyczynia się do jej wzrostu." },
+            { id: 4, name: "Bcca", opis: "ALLNUTRITION Whey Protein to białko w którego skład wchodzi czysty koncentrat białka serwatki bez dodatku innych mniej wartościowych składników. Nasze białko charakteryzuje się szybkim wchłanianiem, wysokim poziomem aminokwasów rozgałęzionych oraz wysoką wartością biologiczną (BV 104). Białko pomaga w utrzymaniu masy mięśniowej oraz przyczynia się do jej wzrostu." },
+            { id: 5, name: "Wpa", opis: "ALLNUTRITION Whey Protein to białko w którego skład wchodzi czysty koncentrat białka serwatki bez dodatku innych mniej wartościowych składników. Nasze białko charakteryzuje się szybkim wchłanianiem, wysokim poziomem aminokwasów rozgałęzionych oraz wysoką wartością biologiczną (BV 104). Białko pomaga w utrzymaniu masy mięśniowej oraz przyczynia się do jej wzrostu." },
+            { id: 6, name: "Shot", opis: " ALLNUTRITION Whey Protein to białko w którego skład wchodzi czysty koncentrat białka serwatki bez dodatku innych mniej wartościowych składników. Nasze białko charakteryzuje się szybkim wchłanianiem, wysokim poziomem aminokwasów rozgałęzionych oraz wysoką wartością biologiczną (BV 104). Białko pomaga w utrzymaniu masy mięśniowej oraz przyczynia się do jej wzrostu." },
         ]
 
     }
@@ -73,17 +73,18 @@ class ProductList extends Component {
         products = products.map(product => (
             <Product
                 key={products.id}
-                name={product.name}
-                opis={product.opis}
-                handleToggleInfo ={this.handleToggleInfo}
-                isModalInfoOpen ={this.isModalInfoOpen}
-                handleToggleModal ={this.handleToggleModal}
-                isModalOpen={this.state.isModalOpen}
-                handleBuy ={this.handleBuy}
-                handleChangeValue={this.handleChangeValue}
-                value={this.state.value}
-                availble={this.state.availble}
-                isSomethinginShopCard={this.state.isSomethinginShopCard}
+                products ={product}
+                // name={product.name}
+                // opis={product.opis}
+                // handleToggleInfo ={this.handleToggleInfo}
+                // isModalInfoOpen ={this.isModalInfoOpen}
+                // handleToggleModal ={this.handleToggleModal}
+                // isModalOpen={this.state.isModalOpen}
+                // handleBuy ={this.handleBuy}
+                // handleChangeValue={this.handleChangeValue}
+                // value={this.state.value}
+                // availble={this.state.availble}
+                // isSomethinginShopCard={this.state.isSomethinginShopCard}
                
             />
             
@@ -91,7 +92,7 @@ class ProductList extends Component {
         ));
             
         return (
-            <div className="products">
+            <div className="products-container">
 
 
                 {products}
