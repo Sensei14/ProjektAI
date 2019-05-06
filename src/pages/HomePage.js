@@ -1,8 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import "../styles/homepage.css";
-import img1 from "../images/home1.jpg";
-import img2 from "../images/home2.jpg";
+// import img1 from "../images/home1.jpg";
+// import img2 from "../images/home2.jpg";
 import t1 from "../images/t1.jpg";
 import t2 from "../images/t2.jpg";
 import t3 from "../images/t3.jpg";

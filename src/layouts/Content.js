@@ -4,6 +4,7 @@ import RegisterPage from "../pages/RegisterPage";
 import ContactPage from "../pages/ContactPage";
 import ProductPage from "../pages/ProductPage";
 import HomePage from "../pages/HomePage";
+import SingleProduct from "../pages/SingleProduct";
 
 const Content = () => {
   return (
@@ -13,6 +14,7 @@ const Content = () => {
         <Route path="/products" component={ProductPage} />
         <Route path="/contact" component={ContactPage} />
         <Route path="/register" component={RegisterPage} />
+        <Route path="/product/:name" component={SingleProduct} />
 
         <Route component={() => "ERROR PAGE"} />
       </Switch>

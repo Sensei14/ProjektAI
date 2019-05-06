@@ -1,0 +1,90 @@
+.product-container  {
+
+    /* border: solid 2px yellow; */
+    height: 600px;
+}
+
+.product-container img {
+    margin-right: 1200px;
+    margin-top:50px;
+    margin-bottom: 30px;
+    margin-left: auto;
+    /* border: solid 2px black; */
+}
+
+
+
+.name {
+/* border: solid 2px orange; */
+    margin-top: 15px;
+    
+    text-align: center;
+    font-size: 40px;
+    font-weight: 600;
+    color: steelblue;
+}
+
+.img-description-price {
+    text-align: center;
+    background-color: white;
+    color: black;
+    
+}
+
+.desc {
+    /* border:solid 2px green; */
+    margin-left: 300px;
+    margin-right: 500px;
+    margin-top: -300px;
+    font-size: 20px;
+}
+
+.add {
+    margin-top:150px;
+    position: relative;
+    bottom: 350px;
+    right: -520px;
+    font-size: 35px;
+    background-color: red;
+    color:white;
+    border: none;
+    border-radius:  15px 15px 15px 15px;
+    width: 370px;
+}
+
+.add:hover {
+    cursor: pointer;
+}
+
+.back {
+/* border:solid 2px blue; */
+font-size: 30px;
+position: relative;
+bottom: 200px;
+
+
+}
+
+.price {
+font-size: 35px;
+background-color: white;
+font-weight: 600;
+color:steelblue;
+ border-radius: 15px 15px 15px 15px;
+ width: 150px;
+ height: 60px;
+position: relative;
+top: -280px;
+left: 1200px;
+}
+
+.amount {
+    background-color: steelblue;
+    color: white;
+    border-radius: 15px 15px 15px 15px;
+    border: none;
+    width: 70px;
+    height: 40px;
+    margin-top: 80px;
+    margin-right: 1210px;
+}
