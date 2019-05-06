@@ -26,7 +26,10 @@ const Navbar = props => {
 
         {props.isLogged ? (
           <span>
+            <Link to="/shoppingcart"> 
             <i class="fas fa-shopping-cart fa-lg" />
+            </Link>
+               <span class="badge badge-light">1</span>
             <span>
               USERNAME
               <Link to="/">
@@ -55,11 +58,7 @@ const Navbar = props => {
           </span>
         )}
 
-        {/* <span>
-          Jesteś zalogowany!
-          <button className="btn btn-outline-light btn-sm"> Logowanie </button>
-          <button className="btn btn-outline-light btn-sm">Rejestracja</button>
-        </span> */}
+
       </nav>
     </div>
   );
