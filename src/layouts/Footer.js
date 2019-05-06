@@ -1,5 +1,7 @@
 import React from "react";
 import "../styles/footer.css";
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   return (
     <div className="footer">
@@ -12,7 +14,7 @@ const Footer = () => {
         <i className="fab fa-youtube fa-2x" />
       </div>
       <div className="footer-copyright py-3">
-        Regulamin | © 2019 Sklep KASZTANIAKI
+        <Link to="/rules">Regulamin </Link>| © 2019 Sklep MUSCLE POWER
       </div>
     </div>
   );

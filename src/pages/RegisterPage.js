@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "../styles/register.css";
-
+import { Link } from "react-router-dom";
 class RegisterPage extends Component {
   state = {
     username: "",
@@ -51,53 +51,60 @@ class RegisterPage extends Component {
 
   render() {
     return (
-      <div>
-        <div className="register">
-          <form onSubmit={this.handleSubmit}>
-            <div>
-              <input
-                type="text"
-                value={this.state.username}
-                placeholder="Nazwa użytkownika"
-                onChange={this.handleChange}
-                name="username"
-                minLength="3"
-              />
-            </div>
-            <div>
-              <input
-                type="password"
-                value={this.state.password}
-                placeholder="Hasło"
-                onChange={this.handleChange}
-                name="password"
-                minLength="5"
-              />
-            </div>
-            <div>
-              <input
-                type="email"
-                value={this.state.email}
-                placeholder="E-mail"
-                onChange={this.handleChange}
-                name="email"
-              />
-            </div>
+      <div className="register">
+        <form onSubmit={this.handleSubmit}>
+          <div className="form-group">
             <input
-              type="checkbox"
-              isChecked={this.state.agree}
+              className="form-control"
+              type="text"
+              value={this.state.username}
+              placeholder="Nazwa użytkownika"
               onChange={this.handleChange}
-              name="agree"
+              name="username"
+              minLength="3"
             />
-            <span>
-              Oświadczam, że zapoznałem się z Regulaminem, akceptuję jego treść
-              i zobowiązuję się przestrzegać jego postanowień.
-            </span>
-            <div>
-              <button className="btn btn-light btn-sm"> Zarejestruj </button>
-            </div>
-          </form>
-        </div>
+          </div>
+          <div className="form-group">
+            <input
+              className="form-control"
+              type="password"
+              value={this.state.password}
+              placeholder="Hasło"
+              onChange={this.handleChange}
+              name="password"
+              minLength="5"
+            />
+          </div>
+          <div className="form-group">
+            <input
+              className="form-control"
+              type="email"
+              value={this.state.email}
+              placeholder="E-mail"
+              onChange={this.handleChange}
+              name="email"
+            />
+          </div>
+          <input
+            type="checkbox"
+            isChecked={this.state.agree}
+            onChange={this.handleChange}
+            name="agree"
+          />
+          <span>
+            Oświadczam, że zapoznałem się z{" "}
+            <Link to="/rules" target="_blank">
+              Regulaminem
+            </Link>
+            , akceptuję jego treść i zobowiązuję się przestrzegać jego
+            postanowień.
+          </span>
+          <div>
+            <button className="btn btn-dark btn-lg btn-block">
+              Zarejestruj
+            </button>
+          </div>
+        </form>
       </div>
     );
   }

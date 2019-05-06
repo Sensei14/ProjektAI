@@ -1,0 +1,23 @@
+.rules {
+  width: 80%;
+  margin: 20px auto;
+  border: 1px black solid;
+  border-radius: 10px;
+}
+
+.rules ol[type="I"] {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 20px;
+  text-transform: uppercase;
+}
+.rules ol[type="1"] {
+  font-size: 18px;
+  font-weight: normal;
+  margin: 20px;
+  text-transform: none;
+}
+
+.rules li {
+  margin: 5px;
+}

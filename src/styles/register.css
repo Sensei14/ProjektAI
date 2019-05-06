@@ -1,32 +1,23 @@
 .register {
-  width: 50%;
+  width: 30%;
   display: block;
   margin: auto;
   padding: 10px;
 }
 
 .register input {
-  margin: 15px 0 12px;
-}
-
-/* .register input:invalid {
-    box-shadow: inset 0px 0px 0px 0px;
-} */
-
-.register label {
-  margin-left: 7px;
+  margin: 35px 0 12px;
 }
 
 .register span {
   color: black;
   font-size: 16px;
-  display: block;
   margin-top: -7px;
   word-wrap: break-word;
 }
 
 .register button {
-  margin-top: 15px;
+  margin: 20px auto;
   text-transform: uppercase;
   font-weight: bold;
   letter-spacing: 1px;

@@ -1,4 +1,33 @@
+.contact {
+  padding-top: 20px;
+}
+
 .contact span {
   color: steelblue;
   font-size: 24px;
+}
+
+.contact textarea {
+  width: 50%;
+  min-height: 150px;
+  margin: 10px auto;
+}
+
+.contact select {
+  width: 20%;
+  margin: 20px auto;
+  display: inline-block;
+}
+
+.contact label {
+  margin-right: 30px;
+}
+
+.contact button {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.message {
+  margin: 20px;
 }
