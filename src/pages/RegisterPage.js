@@ -92,10 +92,7 @@ class RegisterPage extends Component {
             name="agree"
           />
           <span>
-            Oświadczam, że zapoznałem się z{" "}
-            <Link to="/rules" target="_blank">
-              Regulaminem
-            </Link>
+            Oświadczam, że zapoznałem się z <Link to="/rules">Regulaminem</Link>
             , akceptuję jego treść i zobowiązuję się przestrzegać jego
             postanowień.
           </span>
