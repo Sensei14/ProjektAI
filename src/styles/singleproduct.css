@@ -1,90 +1,94 @@
-.product-container  {
 
-    /* border: solid 2px yellow; */
-    height: 600px;
-}
+/* NOWY */
 
-.product-container img {
-    margin-right: 1200px;
-    margin-top:50px;
-    margin-bottom: 30px;
-    margin-left: auto;
+.single-container {
     /* border: solid 2px black; */
+    height: 550px;
+    width: 100%;
+    background-color: white;
+   
 }
 
-
+.imgs {
+    /* border: solid 2px red; */
+    /* margin-right: 400px; */
+   width: 30vw;
+}
 
 .name {
-/* border: solid 2px orange; */
-    margin-top: 15px;
-    
-    text-align: center;
-    font-size: 40px;
-    font-weight: 600;
-    color: steelblue;
-}
-
-.img-description-price {
-    text-align: center;
-    background-color: white;
-    color: black;
-    
-}
-
-.desc {
-    /* border:solid 2px green; */
-    margin-left: 300px;
-    margin-right: 500px;
-    margin-top: -300px;
-    font-size: 20px;
-}
-
-.add {
-    margin-top:150px;
-    position: relative;
-    bottom: 350px;
-    right: -520px;
     font-size: 35px;
+    color:steelblue;
+     /* border: solid 2px orange; */
+     margin-bottom: 15px;
+    
+}
+
+.amount-item {
+    /* border: solid 2px purple; */
+    margin-top: 15px;
+    margin-left: 0px;
+    width: 30vw;
+    margin-right: auto;
+      /* background-color: steelblue; */
+    color: black;
+    border-radius: 15px 15px 15px 15px;
+    /* border: none; */
+    font-size:20px;
+    vertical-align: middle;
+}
+
+.amount {
+     border-radius: 15px 15px 15px 15px;
+     background-color:steelblue;
+     border: none;
+     color: white;
+     width: 70px;
+     height: 35px;;
+}
+
+.info-item {
+    
+     border: solid 1px white; 
+    width: 100vw;
+   
+    margin-right: auto;
+}
+
+.info {
+    text-align: center;
+    /* border: solid 2px blue; */
+    width: 40vw;
+    margin-left: 30vw;
+    margin-top: -250px;
+}
+
+
+.price-add-item {
+    /* border: solid 2px gray; */
+    width: 100vw;
+}
+
+.price-add {
+    width: 20vw;
+    /* border: solid 2px blue; */
+    margin-left: 75vw;
+    margin-top: -300px;
+    font-size: 35px;
+    color: steelblue;
+    font-weight: 600;
+}
+
+.price-add button {
+
+        font-size: 23px;
     background-color: orange;
     color:white;
     border: none;
     border-radius:  15px 15px 15px 15px;
-    width: 370px;
+    width: 19vw;
 }
 
-.add:hover {
+.price-add button:hover {
+
     cursor: pointer;
-}
-
-.back {
-/* border:solid 2px blue; */
-font-size: 30px;
-position: relative;
-bottom: 200px;
-
-
-}
-
-.price {
-font-size: 35px;
-background-color: white;
-font-weight: 600;
-color:steelblue;
- border-radius: 15px 15px 15px 15px;
- width: 150px;
- height: 60px;
-position: relative;
-top: -280px;
-left: 1200px;
-}
-
-.amount {
-    background-color: steelblue;
-    color: white;
-    border-radius: 15px 15px 15px 15px;
-    border: none;
-    width: 70px;
-    height: 40px;
-    margin-top: 80px;
-    margin-right: 1210px;
 }
