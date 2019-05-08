@@ -62,7 +62,9 @@ class ContactPage extends Component {
                   onChange={this.handleChange}
                   name="typeOfProblem"
                 >
-                  <option selected disabled hidden />
+                  <option value disabled hidden>
+                    Wybierz{" "}
+                  </option>
                   <option value="Porada"> Porada</option>
                   <option value="Dostawa"> Dostawa</option>
                   <option value="Płatność"> Płatność</option>

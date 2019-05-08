@@ -26,10 +26,10 @@ const Navbar = props => {
 
         {props.isLogged ? (
           <span>
-            <Link to="/shoppingcart"> 
-            <i class="fas fa-shopping-cart fa-lg" />
+            <Link to="/shoppingcart">
+              <i class="fas fa-shopping-cart fa-lg" />
             </Link>
-               <span class="badge badge-light">1</span>
+            <span class="badge badge-light">1</span>
             <span>
               USERNAME
               <Link to="/">
@@ -44,12 +44,11 @@ const Navbar = props => {
           </span>
         ) : (
           <span>
-            <button
-              className="btn btn-outline-light btn-sm"
-              onClick={props.handleLogin}
-            >
-              Logowanie
-            </button>
+            <Link to="/login">
+              <button className="btn btn-outline-light btn-sm">
+                Logowanie
+              </button>
+            </Link>
             <Link to="/register">
               <button className="btn btn-outline-light btn-sm">
                 Rejestracja
@@ -57,8 +56,6 @@ const Navbar = props => {
             </Link>
           </span>
         )}
-
-
       </nav>
     </div>
   );

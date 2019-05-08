@@ -27,7 +27,7 @@ const HomePage = () => {
       <img src={img1} alt="home2" /> */}
       <div className="homeicons">
         <span>
-          <i class="fas fa-medal fa-2x" style={{ color: "gold" }} />
+          <i className="fas fa-medal fa-2x" style={{ color: "gold" }} />
           <br />
           SETKI PRODUKTÓW NAJWYŻSZEJ JAKOŚCI
         </span>
@@ -73,7 +73,7 @@ const HomePage = () => {
       </div>
       <div className="homeicons">
         <span>
-          <i class="fas fa-star fa-2x" style={{ color: "gold" }} />
+          <i className="fas fa-star fa-2x" style={{ color: "gold" }} />
           <br />
           TYSIĄCE ZADOWOLONYCH KLIENTÓW, W TYM DOŚWIADCZENI KULTURYŚCI
         </span>
@@ -125,16 +125,16 @@ const HomePage = () => {
       <div className="homeicons">
         <ul>
           <li>
-            <i class="fas fa-heart fa-lg" />
+            <i className="fas fa-heart fa-lg" />
             <br />
             99% ZADOWOLONYCH KLIENTÓW
           </li>
           <li>
-            <i class="fas fa-sync-alt fa-lg" /> <br />
+            <i className="fas fa-sync-alt fa-lg" /> <br />
             30 DNI NA ZWROT ZAKUPIONEGO TOWARU
           </li>
           <li>
-            <i class="fas fa-truck-moving fa-lg" /> <br />
+            <i className="fas fa-truck-moving fa-lg" /> <br />
             DARMOWA DOSTAWA
           </li>
         </ul>

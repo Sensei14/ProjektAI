@@ -87,7 +87,7 @@ class RegisterPage extends Component {
           </div>
           <input
             type="checkbox"
-            isChecked={this.state.agree}
+            checked={this.state.agree}
             onChange={this.handleChange}
             name="agree"
           />

@@ -11,6 +11,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 class App extends Component {
   state = {
     isLogged: false,
+    loggedUser: {},
     isLoaded: true
   };
 
@@ -27,8 +28,9 @@ class App extends Component {
           <Navbar
             isLogged={this.state.isLogged}
             handleLogin={this.handleLogin}
+            loggedUser={this.state.loggedUser}
           />
-          <Content />
+          <Content isLogged={this.state.isLogged} />
           <Footer />
         </div>
       </Router>
