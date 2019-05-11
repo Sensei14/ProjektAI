@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "../styles/register.css";
-import { Link } from "react-router-dom";
 import "../styles/rules.css";
+import { Link } from "react-router-dom";
 
 class RegisterPage extends Component {
   state = {
@@ -12,7 +12,8 @@ class RegisterPage extends Component {
     name: "",
     lastname: "",
     city: "",
-    street: ""
+    street: "",
+    userRegistered: false
   };
 
   handleChange = e => {
@@ -62,15 +63,47 @@ class RegisterPage extends Component {
     e.preventDefault();
 
     if (this.validation()) {
-      alert("Użytkownik został zarejestrowany!");
+      const user = this.state;
+
+      fetch("http://localhost:3010/register", {
+        method: "POST",
+        body: JSON.stringify(user),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      })
+        .then(res => res.json())
+        .then(res => {
+          if (res.status === 1) {
+            this.setState({
+              userRegistered: true
+            });
+
+            this.setState({
+              username: "",
+              password: "",
+              email: "",
+              agree: false,
+              name: "",
+              lastname: "",
+              city: "",
+              street: ""
+            });
+          }
+        });
     } else {
       alert("Formularz został błędnie wypełniony");
     }
-
-    console.log(this.state);
   };
 
   render() {
+    const alert = (
+      <div className="alert alert-primary" style={{ textAlign: "center" }}>
+        <strong>Użytkownik zarejestrowany!</strong> <br />
+        Możesz się teraz zalogować.
+      </div>
+    );
+
     return (
       <div className="register">
         <form onSubmit={this.handleSubmit}>
@@ -160,7 +193,7 @@ class RegisterPage extends Component {
 
           <span>
             Oświadczam, że zapoznałem się z{" "}
-            <Link data-toggle="modal" data-target="#rules">
+            <Link to="" data-toggle="modal" data-target="#rules">
               Regulaminem{" "}
             </Link>
             , akceptuję jego treść i zobowiązuję się przestrzegać jego
@@ -172,6 +205,8 @@ class RegisterPage extends Component {
             </button>
           </div>
         </form>
+
+        {this.state.userRegistered ? <div>{alert}</div> : null}
 
         <div className="modal" id="rules">
           <div className="modal-dialog modal-lg">

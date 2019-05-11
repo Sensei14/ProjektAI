@@ -22,7 +22,7 @@ class App extends Component {
       password: this.state.passwordLog
     };
 
-    fetch("http://localhost:3010/", {
+    fetch("http://localhost:3010/login", {
       method: "POST",
       body: JSON.stringify(userCredentials),
       headers: {

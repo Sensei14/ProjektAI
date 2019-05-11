@@ -8,9 +8,12 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const users = express();
 const products = express();
+const login = express();
+const register = express();
 
-mongoose.connect(config.db, { useNewUrlParser: true });
+mongoose.connect(config.db, { useNewUrlParser: true }); // połączenie z bazą danych
 
+// ustawienie dostepu
 server.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
 
@@ -22,7 +25,7 @@ server.use(function(req, res, next) {
   next();
 });
 
-server.use(bodyParser.json());
+server.use(bodyParser.json()); //parsowanie na json
 
 let productsList = [];
 let usersList = [];
@@ -48,14 +51,8 @@ products.get("/", (req, res) => {
   res.send("PRODUCTS");
 });
 
-server.get("/", (req, res) => {
-  res.send("OKEJ");
-});
-
-server.use("/users", users);
-server.use("/products", products);
-
-server.post("/", (req, res) => {
+//Sprawdzenie danych logowania, odpowiedź (0 bład logowania, 1 logowanie prawidłowe)
+login.post("/", (req, res) => {
   let answer = {
     status: 0,
     user: {}
@@ -86,6 +83,31 @@ server.post("/", (req, res) => {
   );
 });
 
+register.post("/", (req, res) => {
+  const user = new Users({
+    login: {
+      username: req.body.username,
+      password: req.body.password
+    },
+    adress: {
+      city: req.body.city,
+      street: req.body.street
+    },
+    userData: {
+      name: req.body.name,
+      lastname: req.body.lastname,
+      email: req.body.email
+    }
+  });
+
+  user.save().then(() => {
+    res.send({
+      status: 1,
+      text: "Użytkownik zarejestrowany"
+    });
+  });
+});
+
 // const adminUser = new Users({
 //   login: {
 //     username: "admin",
@@ -105,5 +127,14 @@ server.post("/", (req, res) => {
 // console.log(adminUser);
 
 // adminUser.save().then(() => console.log("adminUser"));
+
+server.get("/", (req, res) => {
+  res.send("OKEJ");
+});
+
+server.use("/users", users);
+server.use("/products", products);
+server.use("/login", login);
+server.use("/register", register);
 
 server.listen(port, () => console.log(`Listening on port ${port}`));
