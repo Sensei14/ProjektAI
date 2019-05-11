@@ -1,12 +1,8 @@
 .register {
   width: 30%;
-  display: block;
-  margin: auto;
   padding: 10px;
-}
-
-.register input {
-  margin: 35px 0 12px;
+  margin: 30px auto;
+  text-align: left;
 }
 
 .register span {
