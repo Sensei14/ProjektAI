@@ -2,7 +2,7 @@ const express = require("express");
 const config = require("./config");
 const server = express();
 const port = 3010;
-const Users = require("./schemas/user");
+const Users = require("./schemas/users");
 const Products = require("./schemas/product");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
@@ -28,12 +28,20 @@ let productsList = [];
 let usersList = [];
 
 users.get("/", (req, res) => {
-  Users.find((err, users) => {
-    if (err) return console.error(err);
-    usersList = users;
+  Users.find(
+    {
+      login: {
+        username: "admin",
+        password: "admin123"
+      }
+    },
+    (err, users) => {
+      if (err) return console.error(err);
+      usersList = users;
 
-    res.send(usersList);
-  });
+      res.send(usersList);
+    }
+  );
 });
 
 products.get("/", (req, res) => {
@@ -47,11 +55,41 @@ server.get("/", (req, res) => {
 server.use("/users", users);
 server.use("/products", products);
 
+server.post("/", (req, res) => {
+  let answer = {
+    status: 0,
+    user: {}
+  };
+
+  console.log(req.body);
+  Users.find(
+    {
+      login: {
+        username: req.body.username,
+        password: req.body.password
+      }
+    },
+    (err, users) => {
+      if (err) return console.error(err);
+
+      if (users.length !== 0) {
+        answer.status = 1;
+        answer.user = users[0];
+        res.send(answer);
+        console.log("OK");
+      } else {
+        console.log("NOT OK");
+        answer.status = 0;
+        res.send(answer);
+      }
+    }
+  );
+});
+
 // const adminUser = new Users({
 //   login: {
 //     username: "admin",
-//     password: "admin123",
-//     email: "Admin@adm.pl"
+//     password: "admin123"
 //   },
 //   adress: {
 //     city: "Rzeszów",
@@ -59,7 +97,8 @@ server.use("/products", products);
 //   },
 //   userData: {
 //     name: "Admin",
-//     lastname: "Administrator"
+//     lastname: "Administrator",
+//     email: "Admin@adm.pl"
 //   }
 // });
 
