@@ -36,94 +36,51 @@ class SingleProduct extends React.Component {
     } = this.state.product;
 
     return (
-      <div className="single-container">
-        <div className="name"> {name} </div>
+      <div className="single-product">
+        <div className="product-name"> {name} </div>
 
-        <div className="imgs">
-          <img src={image} alt="zdj" />
-        </div>
-        <div className="amount-item">
-          <button className="amount">750g</button>
-        </div>
-        <div className="info-item">
-          <div className="info">
-            <ul className="nav nav-tabs" id="myTab" role="tablist">
+        <div className="product-info">
+          <div className="img-product">
+            <img src={image} alt="image" />{" "}
+          </div>
+
+          <div className="tab-product">
+            <ul className="nav nav-tabs">
               <li className="nav-item">
-                <a
-                  className="nav-link active"
-                  id="home-tab"
-                  data-toggle="tab"
-                  href="#home"
-                  role="tab"
-                  aria-controls="home"
-                  aria-selected="true"
-                >
+                <a className="nav-link active" data-toggle="tab" href="#desc">
                   Opis
                 </a>
               </li>
               <li className="nav-item">
-                <a
-                  className="nav-link"
-                  id="profile-tab"
-                  data-toggle="tab"
-                  href="#profile"
-                  role="tab"
-                  aria-controls="profile"
-                  aria-selected="false"
-                >
+                <a className="nav-link" data-toggle="tab" href="#portion">
                   Skład
                 </a>
               </li>
               <li className="nav-item">
-                <a
-                  className="nav-link"
-                  id="contact-tab"
-                  data-toggle="tab"
-                  href="#contact"
-                  role="tab"
-                  aria-controls="contact"
-                  aria-selected="false"
-                >
+                <a className="nav-link" data-toggle="tab" href="#ingr">
                   Zalecane dawkowanie
                 </a>
               </li>
             </ul>
-            <div className="tab-content" id="myTabContent">
-              <div
-                className="tab-pane fade show active"
-                id="home"
-                role="tabpanel"
-                aria-labelledby="home-tab"
-              >
+
+            <div className="tab-content">
+              <div className="tab-pane container active" id="desc">
                 {description}
               </div>
-              <div
-                className="tab-pane fade"
-                id="profile"
-                role="tabpanel"
-                aria-labelledby="profile-tab"
-              >
-                {Ingredients}
-              </div>
-              <div
-                className="tab-pane fade"
-                id="contact"
-                role="tabpanel"
-                aria-labelledby="contact-tab"
-              >
+              <div className="tab-pane container fade" id="portion">
                 {portioning}
+              </div>
+              <div className="tab-pane container fade" id="ingr">
+                {Ingredients}
               </div>
             </div>
           </div>
-        </div>
 
-        <div className="price-add-item">
-          <div className="price-add">
-            {price} zł
-            <p>
-              {" "}
-              <button>Dodaj do koszyka</button>
-            </p>
+          <div className="price">
+            <p>{price} zł </p>
+            <button className="btn btn-warning btn-block btn-lg">
+              Dodaj do koszyka
+            </button>
           </div>
         </div>
       </div>
