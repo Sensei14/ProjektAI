@@ -72,7 +72,12 @@ const Navbar = props => {
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header">
-              <h3 className="modal-title">Logowanie</h3>
+              <h3
+                className="modal-title"
+                style={{ fontWeight: "bold", color: "#444" }}
+              >
+                MusclePower
+              </h3>
             </div>
             <div className="modal-body">
               <div className="login-form">

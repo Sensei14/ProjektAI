@@ -48,7 +48,29 @@ users.get("/", (req, res) => {
 });
 
 products.get("/", (req, res) => {
-  res.send("PRODUCTS");
+  Products.find((err, products) => {
+    if (err) return console.error(err);
+
+    productsList = products;
+
+    res.send(productsList);
+  });
+});
+
+products.all("*", (req, res) => {
+  let idProduct = req.path;
+  idProduct = idProduct.substr(1, idProduct.length);
+  Products.find(
+    {
+      _id: idProduct
+    },
+    (err, product) => {
+      if (err) return console.error(err);
+
+      console.log(product);
+      res.send(product);
+    }
+  );
 });
 
 //Sprawdzenie danych logowania, odpowiedź (0 bład logowania, 1 logowanie prawidłowe)
@@ -58,7 +80,6 @@ login.post("/", (req, res) => {
     user: {}
   };
 
-  console.log(req.body);
   Users.find(
     {
       login: {
@@ -73,9 +94,7 @@ login.post("/", (req, res) => {
         answer.status = 1;
         answer.user = users[0];
         res.send(answer);
-        console.log("OK");
       } else {
-        console.log("NOT OK");
         answer.status = 0;
         res.send(answer);
       }
@@ -83,6 +102,7 @@ login.post("/", (req, res) => {
   );
 });
 
+//rejestracja użytkownika
 register.post("/", (req, res) => {
   const user = new Users({
     login: {
@@ -129,7 +149,7 @@ register.post("/", (req, res) => {
 // adminUser.save().then(() => console.log("adminUser"));
 
 server.get("/", (req, res) => {
-  res.send("OKEJ");
+  res.send("OK");
 });
 
 server.use("/users", users);

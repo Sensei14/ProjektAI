@@ -1,19 +1,19 @@
 import React from "react";
 // import { Button, Modal, ModalHeader, ModalFooter, ModalBody } from "reactstrap";
-import bialeczko1 from "../images/bialeczko1.png";
 import { Link } from "react-router-dom";
 
 const Product = props => {
-  const { name, opis } = props.products;
-  const adres = `/product/${name}`;
+  console.log(props);
+  const { name, description, _id, image } = props.products;
+  const adres = `/product/${_id}`;
   return (
     <div className="products-item">
-      <img src={bialeczko1} alt="kasztan" />
+      <img src={image} alt="img" width="200px" />
 
       <br />
       <p className="productname"> {name} </p>
 
-      <span className="description">{opis}</span>
+      <span className="description">{description}</span>
       <Link to={adres}>
         <button>Sprawdź produkt</button>
       </Link>

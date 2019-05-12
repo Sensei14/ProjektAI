@@ -15,10 +15,6 @@
   cursor: pointer;
 }
 
-.products-container {
-  /* border: solid 2px orange; */
-}
-
 .products-item button {
   width: 100%;
   height: 60px;
@@ -58,5 +54,8 @@
 .description {
   text-align: center;
   color: black;
+  display: block;
+  overflow: auto;
+  height: 200px;
+  padding: 5px;
 }
-
