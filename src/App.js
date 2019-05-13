@@ -12,7 +12,8 @@ class App extends Component {
     usernameLog: "",
     passwordLog: "",
     isLogged: false,
-    loggedUser: {}
+    loggedUser: {},
+    isModalOpened: false
   };
 
   handleLogin = e => {
@@ -57,6 +58,12 @@ class App extends Component {
     });
   };
 
+  handleToggleModal = () => {
+    this.setState({
+      isModalOpened:!this.state.isModalOpened
+    })
+  }
+
   render() {
     return (
       <Router basename={process.env.PUBLIC_URL}>
@@ -69,6 +76,8 @@ class App extends Component {
             passwordLog={this.state.passwordLog}
             handleChange={this.handleChange}
             handleLogOut={this.handleLogOut}
+            handleToggleModal={this.handleToggleModal}
+            isModalOpened ={this.state.isModalOpened}
           />
           <Content isLogged={this.state.isLogged} />
           <Footer />

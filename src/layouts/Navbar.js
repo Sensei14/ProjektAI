@@ -2,13 +2,16 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/navbar.css";
 import "../styles/login.css";
+import  {Modal , ModalBody ,ModalHeader, ModalFooter} from  "reactstrap";
 
 const Navbar = props => {
+
   const alert = (
     <div className="alert alert-primary">
       <strong>Zalogowano!</strong>
     </div>
   );
+ 
 
   return (
     <div className="mynavbar">
@@ -54,8 +57,9 @@ const Navbar = props => {
           <span>
             <button
               className="btn btn-outline-light btn-sm"
-              data-toggle="modal"
-              data-target="#loginModal"
+              // data-toggle="modal"
+              // data-target="#loginModal"
+              onClick={()=>props.handleToggleModal()}
             >
               Logowanie
             </button>
@@ -68,17 +72,22 @@ const Navbar = props => {
         )}
       </nav>
 
-      <div className="modal" id="loginModal">
+      <div className="modal" id="loginModal" >
         <div className="modal-dialog">
           <div className="modal-content">
+          
             <div className="modal-header">
-              <h3
-                className="modal-title"
-                style={{ fontWeight: "bold", color: "#444" }}
-              >
-                MusclePower
-              </h3>
+         
             </div>
+            <Modal isOpen={props.isModalOpened}>
+              <ModalHeader>
+                <h3
+                  className="modal-title"
+                  style={{ fontWeight: "bold", color: "#444" }}
+                >
+                  MusclePower
+              </h3>
+              </ModalHeader>
             <div className="modal-body">
               <div className="login-form">
                 <form onSubmit={props.handleLogin}>
@@ -103,19 +112,21 @@ const Navbar = props => {
                       onChange={props.handleChange}
                     />
                   </div>
-                  <button className="btn btn-dark btn-lg btn-block">
-                    Zaloguj
+                  <button className="btn btn-dark btn-lg btn-block" onClick={props.handleToggleModal}>
+                    ZalogujXD
                   </button>
                 </form>
                 <button
-                  data-dismiss="modal"
+                    onClick={props.handleToggleModal}
                   className="btn btn-danger btn-lg btn-block"
+                  
                 >
                   Powrót
                 </button>
                 {props.isLogged === true ? <div>{alert}</div> : null}
               </div>
             </div>
+            </Modal>
           </div>
         </div>
       </div>
