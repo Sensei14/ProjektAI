@@ -80,15 +80,16 @@ const Navbar = props => {
          
             </div>
             <Modal isOpen={props.isModalOpened}>
-              <ModalHeader>
-                <h3
-                  className="modal-title"
-                  style={{ fontWeight: "bold", color: "#444" }}
-                >
-                  MusclePower
-              </h3>
-              </ModalHeader>
+          
             <div className="modal-body">
+                <ModalHeader>
+                  <h3
+                    className="modal-title"
+                    style={{ fontWeight: "bold", color: "#444", textAlign: "center" }}
+                  >
+                    MusclePower
+              </h3>
+                </ModalHeader>
               <div className="login-form">
                 <form onSubmit={props.handleLogin}>
                   <div className="form-group">
@@ -124,8 +125,15 @@ const Navbar = props => {
                   Powrót
                 </button>
                 {props.isLogged === true ? <div>{alert}</div> : null}
+                  
               </div>
+                <ModalFooter style={{ border: "none", textAlign: "center" }}>
+                  <Link to="/register" onClick={props.handleToggleModal}>
+                Nie masz konta? Zarejestruj się
+                </Link>
+                </ModalFooter>
             </div>
+
             </Modal>
           </div>
         </div>
