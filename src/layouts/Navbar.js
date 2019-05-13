@@ -113,8 +113,8 @@ const Navbar = props => {
                       onChange={props.handleChange}
                     />
                   </div>
-                  <button className="btn btn-dark btn-lg btn-block" onClick={props.handleToggleModal}>
-                    ZalogujXD
+                  <button className="btn btn-dark btn-lg btn-block">
+                    Zaloguj się
                   </button>
                 </form>
                 <button

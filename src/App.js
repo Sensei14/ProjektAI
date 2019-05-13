@@ -37,7 +37,8 @@ class App extends Component {
             isLogged: true,
             loggedUser: res.user,
             usernameLog: "",
-            passwordLog: ""
+            passwordLog: "",
+            isModalOpened:false
           });
         }
       });
