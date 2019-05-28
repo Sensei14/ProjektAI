@@ -4,8 +4,12 @@ import { Link } from "react-router-dom";
 
 class SingleProduct extends React.Component {
   state = {
-    count: 0,
-    product: {}
+    product: {
+      item: {},
+      amount: 1,
+      addToCartMessage: "",
+      showMessage: false
+    }
   };
 
   componentDidMount() {
@@ -13,19 +17,49 @@ class SingleProduct extends React.Component {
       .then(res => res.json())
       .then(res =>
         this.setState({
-          product: res[0]
+          product: {
+            item: res[0],
+            amount: 1
+          }
         })
       );
   }
 
-  handleAdd = () => {
+  AddToCart = e => {
+    e.preventDefault();
+
+    fetch("http://localhost:3010/shoppingCartAdd", {
+      method: "POST",
+      body: JSON.stringify(this.state.product),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+      .then(res => res.json())
+      .then(res => {
+        this.setState({
+          addToCartMessage: res.text,
+          showMessage: true
+        });
+      });
+  };
+
+  handleChange = e => {
     this.setState({
-      count: this.state.count + 1
+      product: {
+        item: this.state.product.item,
+        amount: e.target.value
+      }
     });
-    console.log(this.state.count);
   };
 
   render() {
+    const addMessage = (
+      <div className="alert alert-primary">
+        <strong>{this.state.addToCartMessage}</strong>
+      </div>
+    );
+
     const {
       name,
       description,
@@ -33,7 +67,7 @@ class SingleProduct extends React.Component {
       portioning,
       Ingredients,
       price
-    } = this.state.product;
+    } = this.state.product.item;
 
     return (
       <div className="single-product">
@@ -41,7 +75,7 @@ class SingleProduct extends React.Component {
 
         <div className="product-info">
           <div className="img-product">
-            <img src={image} alt="image" />{" "}
+            <img src={image} alt="produkt" />{" "}
           </div>
 
           <div className="tab-product">
@@ -78,11 +112,29 @@ class SingleProduct extends React.Component {
 
           <div className="price">
             <p>{price} zł </p>
-            <button className="btn btn-warning btn-block btn-lg">
-              Dodaj do koszyka
-            </button>
+            <form onSubmit={this.AddToCart}>
+              <div className="form-group">
+                <label>Ilość: </label>
+                <input
+                  type="number"
+                  className="form-control"
+                  value={this.state.product.amount}
+                  onChange={this.handleChange}
+                />
+              </div>
+              <button className="btn btn-warning btn-block btn-lg">
+                Dodaj do koszyka
+              </button>
+            </form>
           </div>
         </div>
+        <div className="toProducts">
+          <Link to="/products"> Powrót do produktów </Link>
+        </div>
+
+        {this.state.showMessage ? (
+          <div className="add-message"> {addMessage} </div>
+        ) : null}
       </div>
     );
   }

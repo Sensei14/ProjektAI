@@ -2,16 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/navbar.css";
 import "../styles/login.css";
-import  {Modal , ModalBody ,ModalHeader, ModalFooter} from  "reactstrap";
+import { Modal, ModalHeader, ModalFooter } from "reactstrap";
 
 const Navbar = props => {
-
-  const alert = (
-    <div className="alert alert-primary">
-      <strong>Zalogowano!</strong>
+  const errorMessage = (
+    <div className="alert alert-danger" style={{ textAlign: "center" }}>
+      <strong>Błędny login lub hasło!</strong>
     </div>
   );
- 
 
   return (
     <div className="mynavbar">
@@ -40,7 +38,6 @@ const Navbar = props => {
             <Link to="/shoppingcart">
               <i className="fas fa-shopping-cart fa-lg" />
             </Link>
-            <span className="badge badge-light">1</span>
             <span>
               {props.loggedUser.login.username}
               <Link to="/">
@@ -55,11 +52,12 @@ const Navbar = props => {
           </span>
         ) : (
           <span>
+            <Link to="/shoppingcart">
+              <i className="fas fa-shopping-cart fa-lg"> </i>
+            </Link>
             <button
               className="btn btn-outline-light btn-sm"
-              // data-toggle="modal"
-              // data-target="#loginModal"
-              onClick={()=>props.handleToggleModal()}
+              onClick={() => props.handleToggleModal()}
             >
               Logowanie
             </button>
@@ -72,68 +70,54 @@ const Navbar = props => {
         )}
       </nav>
 
-      <div className="modal" id="loginModal" >
+      <div className="modal" id="loginModal">
         <div className="modal-dialog">
           <div className="modal-content">
-          
-            <div className="modal-header">
-         
-            </div>
+            <div className="modal-header" />
             <Modal isOpen={props.isModalOpened}>
-          
-            <div className="modal-body">
-                <ModalHeader>
-                  <h3
-                    className="modal-title"
-                    style={{ fontWeight: "bold", color: "#444", textAlign: "center" }}
-                  >
-                    MusclePower
-              </h3>
-                </ModalHeader>
-              <div className="login-form">
-                <form onSubmit={props.handleLogin}>
-                  <div className="form-group">
-                    <label>Nazwa użytkownika</label>
-                    <input
-                      className="form-control"
-                      type="text"
-                      name="usernameLog"
-                      value={props.usernameLog}
-                      onChange={props.handleChange}
-                    />
-                  </div>
+              <div className="modal-body">
+                <ModalHeader>MusclePower</ModalHeader>
+                <div className="login-form">
+                  <form onSubmit={props.handleLogin}>
+                    <div className="form-group">
+                      <label>Nazwa użytkownika</label>
+                      <input
+                        className="form-control"
+                        type="text"
+                        name="usernameLog"
+                        value={props.usernameLog}
+                        onChange={props.handleChange}
+                      />
+                    </div>
 
-                  <div className="form-group">
-                    <label>Hasło</label>
-                    <input
-                      type="password"
-                      className="form-control"
-                      name="passwordLog"
-                      value={props.passwordLog}
-                      onChange={props.handleChange}
-                    />
-                  </div>
-                  <button className="btn btn-dark btn-lg btn-block">
-                    Zaloguj się
-                  </button>
-                </form>
-                <button
+                    <div className="form-group">
+                      <label>Hasło</label>
+                      <input
+                        type="password"
+                        className="form-control"
+                        name="passwordLog"
+                        value={props.passwordLog}
+                        onChange={props.handleChange}
+                      />
+                    </div>
+                    <button className="btn btn-dark btn-lg btn-block">
+                      Zaloguj się
+                    </button>
+                  </form>
+                  <button
                     onClick={props.handleToggleModal}
-                  className="btn btn-danger btn-lg btn-block"
-                  
-                >
-                  Powrót
-                </button>
-                {props.isLogged === true ? <div>{alert}</div> : null}
-                  
-              </div>
+                    className="btn btn-danger btn-lg btn-block"
+                  >
+                    Powrót
+                  </button>
+                  {props.showErrorMessage ? <div>{errorMessage} </div> : null}
+                </div>
                 <ModalFooter style={{ border: "none", textAlign: "center" }}>
                   <Link to="/register" onClick={props.handleToggleModal}>
-                Nie masz konta? Zarejestruj się
-                </Link>
+                    Nie masz konta? Zarejestruj się
+                  </Link>
                 </ModalFooter>
-            </div>
-
+              </div>
             </Modal>
           </div>
         </div>

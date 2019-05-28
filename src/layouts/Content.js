@@ -10,6 +10,9 @@ import ShoppingCart from "../pages/ShoppingCart";
 import LoginPage from "../pages/LoginPage";
 
 const Content = props => {
+  let loggedUser = props.loggedUser;
+  let isLogged = props.isLogged;
+
   return (
     <div className="content">
       <Switch>
@@ -19,7 +22,12 @@ const Content = props => {
         <Route path="/register" component={RegisterPage} />
         <Route path="/product/:name" component={SingleProduct} />
         <Route path="/rules" component={RulesPage} />
-        <Route path="/shoppingcart" component={ShoppingCart} />
+        <Route
+          path="/shoppingcart"
+          render={() => (
+            <ShoppingCart loggedUser={loggedUser} isLogged={isLogged} />
+          )}
+        />
 
         <Route path="/login" component={LoginPage} />
 

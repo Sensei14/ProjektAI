@@ -28,6 +28,12 @@
   font-weight: bold;
 }
 
+.contact input[type="email"] {
+  width: 20%;
+  margin: auto;
+  display: inline-block;
+}
+
 .message {
   margin: 20px;
 }

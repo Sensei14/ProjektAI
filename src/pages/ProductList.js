@@ -5,12 +5,9 @@ import Product from "./Product";
 
 class ProductList extends Component {
   state = {
-    value: 0,
-    availble: 7,
-    isModalOpen: false,
-    isModalInfoOpen: false,
-    isSomethinginShopCard: false,
-    products: []
+    products: [],
+
+    rodzaj: "all"
   };
 
   componentDidMount() {
@@ -23,46 +20,55 @@ class ProductList extends Component {
       );
   }
 
-  handleChangeValue = type => {
-    if (type === "+") {
-      this.setState({
-        value: this.state.value + 1
-      });
-    } else if (type === "-") {
-      this.setState({
-        value: this.state.value - 1
-      });
-    }
-  };
-
-  handleBuy = () => {
-    this.setState({
-      availble: this.state.availble - this.state.value,
-      value: 0,
-      isSomethinginShopCard: true
-    });
-  };
-
-  handleToggleModal = () => {
-    console.log("xd");
-    this.setState({
-      isModalOpen: !this.state.isModalOpen
-    });
-  };
-
-  handleToggleInfo = () => {
-    this.setState({
-      isModalInfoOpen: !this.state.isModalInfoOpen
-    });
+  handleChange = event => {
+    this.setState({ rodzaj: event.target.value });
   };
 
   render() {
+    let rodzaj = this.state.rodzaj;
     let products = [...this.state.products];
-    products = products.map(product => (
-      <Product key={products._id} products={product} />
-    ));
 
-    return <div className="products-container">{products}</div>;
+    if (rodzaj === "all") {
+      products = products.map(product => (
+        <Product key={product._id} products={product} />
+      ));
+    } else if (rodzaj === "bialko") {
+      products = products.filter(product => product.type === "protein");
+      products = products.map(product => (
+        <Product key={product._id} products={product} />
+      ));
+    } else if (rodzaj === "kreatyna") {
+      products = products.filter(product => product.type === "creatine");
+      products = products.map(product => (
+        <Product key={product._id} products={product} />
+      ));
+    } else if (rodzaj === "shot") {
+      products = products.filter(product => product.type === "pump");
+      products = products.map(product => (
+        <Product key={product._id} products={product} />
+      ));
+    } else if (rodzaj === "gainer") {
+      products = products.filter(product => product.type === "gainer");
+      products = products.map(product => (
+        <Product key={product._id} products={product} />
+      ));
+    }
+    return (
+      <>
+        <div className="categories">
+          <div className="select">
+            <select value={this.state.rodzaj} onChange={this.handleChange}>
+              <option value="all">Kategorie</option>
+              <option value="bialko">Białko</option>
+              <option value="gainer">Gainer</option>
+              <option value="kreatyna">Kreatyna</option>
+              <option value="shot">Shot</option>
+            </select>
+          </div>
+        </div>
+        <div className="products-container">{products}</div>
+      </>
+    );
   }
 }
 

@@ -13,7 +13,8 @@ class App extends Component {
     passwordLog: "",
     isLogged: false,
     loggedUser: {},
-    isModalOpened: false
+    isModalOpened: false,
+    showErrorMessage: false
   };
 
   handleLogin = e => {
@@ -38,7 +39,12 @@ class App extends Component {
             loggedUser: res.user,
             usernameLog: "",
             passwordLog: "",
-            isModalOpened:false
+            isModalOpened: false,
+            showErrorMessage: false
+          });
+        } else {
+          this.setState({
+            showErrorMessage: true
           });
         }
       });
@@ -61,9 +67,9 @@ class App extends Component {
 
   handleToggleModal = () => {
     this.setState({
-      isModalOpened:!this.state.isModalOpened
-    })
-  }
+      isModalOpened: !this.state.isModalOpened
+    });
+  };
 
   render() {
     return (
@@ -78,9 +84,13 @@ class App extends Component {
             handleChange={this.handleChange}
             handleLogOut={this.handleLogOut}
             handleToggleModal={this.handleToggleModal}
-            isModalOpened ={this.state.isModalOpened}
+            isModalOpened={this.state.isModalOpened}
+            showErrorMessage={this.state.showErrorMessage}
           />
-          <Content isLogged={this.state.isLogged} />
+          <Content
+            isLogged={this.state.isLogged}
+            loggedUser={this.state.loggedUser}
+          />
           <Footer />
         </div>
       </Router>

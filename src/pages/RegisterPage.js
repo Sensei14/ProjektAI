@@ -434,6 +434,10 @@ class RegisterPage extends Component {
                   </ol>
                 </ol>
               </div>
+              <button className="btn btn-danger" data-dismiss="modal">
+                {" "}
+                Powrót{" "}
+              </button>
             </div>
           </div>
         </div>

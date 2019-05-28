@@ -5,6 +5,14 @@
   padding-top: 15px;
 }
 
+.toProducts {
+  font-size: 24px;
+}
+
+.toProducts a {
+  text-decoration: none;
+}
+
 .product-name {
   font-size: 35px;
   color: steelblue;
@@ -40,4 +48,28 @@
 
 .price button {
   margin: auto;
+}
+
+.price label {
+  color: black;
+  font-size: 18px;
+  font-weight: 550;
+}
+
+.price input[type="number"] {
+  -moz-appearance: textfield;
+  width: 25%;
+  display: inline-block;
+  margin-left: 5px;
+  text-align: center;
+}
+
+.price input::-webkit-outer-spin-button,
+.price input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.add-message {
+  font-size: 23px;
+  margin-top: 40px;
 }

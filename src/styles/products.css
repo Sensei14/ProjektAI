@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Rubik");
 
+.products-container {
+  margin-bottom: 30px;
+}
+
 .products-item {
   border: solid 1px #e2e2e2;
   border-radius: 10px;
@@ -13,6 +17,7 @@
 
 .products-item:hover {
   cursor: pointer;
+  border: solid 1px #bbb;
 }
 
 .products-item button {
@@ -23,8 +28,9 @@
   margin-top: 15px;
   font-size: 20px;
   border: none;
+  color: white;
   border-top: solid #e5e5e5 0.5px;
-  background-color: #efefef;
+  background-color: orange;
   border-radius: 0px 0px 10px 10px;
   outline: none;
   font-weight: 700;
@@ -36,7 +42,7 @@
 }
 
 .products-item button:hover {
-  background-color: orange;
+  background-color: rgb(218, 141, 0);
   transition: 0.3s;
   color: white;
 }
@@ -58,4 +64,62 @@
   overflow: auto;
   height: 200px;
   padding: 5px;
+}
+
+.categories {
+  margin-top: 15px;
+  font-size: 20px;
+}
+
+.select select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background: #5f6872;
+  background-image: none;
+}
+/* Remove IE arrow */
+.select select::-ms-expand {
+  display: none;
+}
+/* Custom Select */
+.select {
+  position: relative;
+  display: flex;
+  width: 180px;
+  height: 3em;
+  line-height: 3;
+  background: #7a8da0;
+  overflow: hidden;
+  border-radius: 0.25em;
+  margin-left: 45vw;
+  cursor: pointer;
+}
+.select select {
+  flex: 1;
+  padding: 0 0.5em;
+  color: #fff;
+  cursor: pointer;
+}
+/* Arrow */
+.select::after {
+  content: "\25BC";
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 1em;
+  background: #6e757c;
+  cursor: pointer;
+  pointer-events: none;
+  -webkit-transition: 0.25s all ease;
+  -o-transition: 0.25s all ease;
+  transition: 0.25s all ease;
+}
+/* Transition */
+.select:hover::after {
+  color: #f39c12;
 }

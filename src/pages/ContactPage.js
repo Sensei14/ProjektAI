@@ -4,18 +4,24 @@ import "../styles/contactpage.css";
 class ContactPage extends Component {
   state = {
     problemText: "",
-    typeOfProblem: "",
-    showAlert: false
+    typeOfProblem: "Porada",
+    showAlert: false,
+    contactEmail: ""
   };
 
   handleSubmit = e => {
     e.preventDefault();
 
-    this.setState({
-      problemText: "",
-      typeOfProblem: "",
-      showAlert: true
-    });
+    const { problemText, contactEmail } = this.state;
+
+    if (problemText.length > 1 && contactEmail.length > 1) {
+      this.setState({
+        problemText: "",
+        typeOfProblem: "Porada",
+        showAlert: true,
+        contactEmail: ""
+      });
+    }
   };
 
   handleChange = e => {
@@ -61,15 +67,23 @@ class ContactPage extends Component {
                   className="form-control"
                   onChange={this.handleChange}
                   name="typeOfProblem"
+                  defaultValue="Porada"
                 >
-                  <option value disabled hidden>
-                    Wybierz{" "}
-                  </option>
                   <option value="Porada"> Porada</option>
                   <option value="Dostawa"> Dostawa</option>
                   <option value="Płatność"> Płatność</option>
                   <option value="Reklamacja"> Reklamacja i zwroty</option>
                 </select>
+              </div>
+              <div className="form-group">
+                <label>Podaj e-mail: </label>
+                <input
+                  type="email"
+                  className="form-control"
+                  value={this.state.contactEmail}
+                  onChange={this.handleChange}
+                  name="contactEmail"
+                />
               </div>
               <div className="form-group">
                 <textarea
