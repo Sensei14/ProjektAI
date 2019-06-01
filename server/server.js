@@ -15,8 +15,6 @@ const shoppingCartAdd = express();
 const shoppingCartBuy = express();
 const shoppingCart = express();
 
-// mongoose.connect(config.db, { useNewUrlParser: true }); // połączenie z bazą danych
-
 mongoose.connect("mongodb://localhost:27017/MusclePower", {
   useNewUrlParser: true
 });
